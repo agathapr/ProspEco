@@ -1,0 +1,98 @@
+[
+    {
+        "id": "ed162d686588f9ba",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "11927d16f34c9c32",
+        "type": "mqtt in",
+        "z": "ed162d686588f9ba",
+        "name": "",
+        "topic": "sensor/luz",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b9a7d99d0fbe0ce",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "e215633ae8255597"
+            ]
+        ]
+    },
+    {
+        "id": "e215633ae8255597",
+        "type": "function",
+        "z": "ed162d686588f9ba",
+        "name": "function 1",
+        "func": "var lightLevel = parseInt(msg.payload);\nif (lightLevel < 500) {\n    msg.payload = \"ON\";\n} else {\n    msg.payload = \"OFF\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "c7b0c36cbfe8698f"
+            ]
+        ]
+    },
+    {
+        "id": "c7b0c36cbfe8698f",
+        "type": "debug",
+        "z": "ed162d686588f9ba",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9b9a7d99d0fbe0ce",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt://broker.hivemq.com:1883",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
