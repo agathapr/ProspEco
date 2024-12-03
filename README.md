@@ -7,6 +7,14 @@ Este projeto em IOT é um sistema de monitoramento de luz que utiliza um sensor 
 ## Objetivo
 O objetivo principal é que funcione como um sensor de luz ambiente para o usuário, para que automaticamente, as luzes da sua casa possam ser ligadas ou desligadas a partir do reconhecimento do nivel de iluminação ambiente presente no momento.
 
+## Feito por
+Agatha Pires
+David Bryan
+Gabriel Lima
+Giovanna Alvarez
+Murilo Matos
+2TDSPH - 2024 - FIAP
+
 ## Estrutura do Projeto
 Hardware Simulado no Wokwi:
 
